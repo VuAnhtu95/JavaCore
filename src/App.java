@@ -1,22 +1,19 @@
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        for (int i = 0; i < 100; i++) {
-            if (isPrimeNumber(i)) {
-                System.out.print(i + " ");
-            }
-        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number you want find factorial?");
+        int number = scanner.nextInt();
+        System.out.println(checkFactorialOfNumber(number));
+
     }
 
-    public static boolean isPrimeNumber(int n){
-        if (n <= 1) {
-            return false;
-        }else{
-            for (int i = 2; i < n; i++) {
-                if (n % i == 0) {
-                    return false;
-                }
-            }
-            return true;
+    public static long checkFactorialOfNumber(int number){
+        long result = 1;
+        for (int i = 1; i <= number; i++) {
+            result = result * i;
         }
+        return result;
     }
 }
